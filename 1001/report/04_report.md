@@ -165,8 +165,8 @@ h. mov ds,1000h
 > b. 유효.
 > c. 무효. 크기가 맞지 않음
 > d. 무효. 메모리에서 메모리 불가능
-> e. 무효. ax가 var2보다 작아야 하는데 둘다 16비트.
-> f. 무효. al은 불가능
+> e. 무효. ax가 var2보다 커야 하는데 둘다 16비트.
+> f. 무효. movzx의 목적지는 레지스터여야 하는데 var2는 메모리
 > g. 유효. 레지스터에서 세그먼트 레지스터로 이동하는 것은 허용
 > h. 무효. 세그먼트 레지스터에 immediate value를 넣을 수 없음
 
@@ -228,7 +228,7 @@ mov WORD PTR three+2,ax
 
 **2.** Using the XCHG instruction no more than three times, reorder the values in four 8-bit registers from the order A,B,C,D to B,C,D,A.
 
-> 답: (a1, b1, cl, dl에 각각 A, B, C, D가 들어 있다고 가정)
+> 답: (a1, b1, cl, dl)에 각각 A, B, C, D가 들어 있다고 가정
 
 ```asm
 xchg al,bl
@@ -408,7 +408,7 @@ myWords WORD 3 DUP(?),2000h
 
 > 답:
 
-```
+```asm
 myBytesW LABEL WORD
 myBytes BYTE 10h,20h,30h,40h
 ```
@@ -586,7 +586,7 @@ Using a loop and indexed addressing, write code that rotates the members of a 32
 
 > 답:
 
-```
+```asm
 .data
 arr DWORD 10,20,30,40
 .code
