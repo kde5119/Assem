@@ -114,7 +114,7 @@ pop eax
 - c. EAX will equal 20 on line 6
 - d. The program will halt with a runtime error on Line 11
 
-> 답: b.
+> 답: d
 
 **17.** Which statement is true about what will happen when the example code runs?
 
